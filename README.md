@@ -18,7 +18,7 @@ Ported logic (1:1 behavior):
 
 ## Degradations (Horizon API gaps)
 
-- The async/background pack loading itself is a host seam: Horizon's client loads resource packs synchronously and owns its loading overlay. This port exposes the tracker (begin/advance/dismiss) and the overlay policy; the client wiring needs a mixin point (`mixins/rrls/horizon-mixin.toml` targets the client game module). Tracked against the Horizon repo's resource-pack loading work (see horizon-rust/horizon #15369 for the connected-texture side of pack format work; the background-reload hook itself has no issue yet).
+- The async/background pack loading itself is a host seam: Horizon's client loads resource packs synchronously and owns its loading overlay. This port exposes the tracker (begin/advance/dismiss) and the overlay policy; the client wiring needs a mixin point (`mixins/rrls/horizon-mixin.toml` targets the client game module). Tracked against the Horizon repo's resource-pack loading work (see horizon-rust/horizon #15369 for the connected-texture side of pack format work; the background-reload and overlay-control hook itself is horizon-rust/horizon #15868).
 - The RGB text tint is exposed as a cycle step for the client's text renderer; no glyph-shader hook exists yet.
 
 Credits: port by sparticle.
